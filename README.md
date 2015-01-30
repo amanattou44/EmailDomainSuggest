@@ -17,7 +17,7 @@ emailDomainSuggest.execute();
 ```
 
 ## Any action?
-![email-domain-suggest](http://giphy.com/gifs/lXiRpZoyp25ZMIQNi/html5)
+![email-domain-suggest](http://i.giphy.com/lXiRpZoyp25ZMIQNi.gif)
 
 ## Support browser
 
