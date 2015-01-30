@@ -12,9 +12,17 @@ bower install --save EventDomainSuggest
 ```js
 <script src="EmailDomainSuggest.js"></script>
 
-var emailDomainSuggest = EmailDomainSuggest.getInstance(`target-input-form-tag`, [options = undefined])
+var emailDomainSuggest = EmailDomainSuggest.getInstance(`target-input-form-tag`)
 emailDomainSuggest.execute();
 ```
+
+- options
+
+`EmailDomainSuggest.getinstance('target-input-form-tag', options);`
+
+datalistId | String       | Overwrite the existing datalist-ID
+---------- | ------------ | -------
+addDomain  | Array/String | You want to add completion list
 
 ## Any action?
 ![email-domain-suggest](http://i.giphy.com/lXiRpZoyp25ZMIQNi.gif)
