@@ -1,0 +1,25 @@
+{
+  "name": "EmailDomainSuggest",
+  "main": "EmailDomainSuggest.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/amanattou44/EmailDomainSuggest",
+  "authors": [
+    "lion_man44 <lion44man@gmail.com>"
+  ],
+  "description": "email domain auto complete",
+  "keywords": [
+    "email",
+    "domain",
+    "auto",
+    "complete",
+    "suggest"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
