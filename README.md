@@ -23,7 +23,6 @@ emailDomainSuggest.execute();
 name       | type         | description
 ---------- | ------------ | -------
 datalistId | String       | Overwrite the existing datalist-ID
----------- | ------------ | -------
 addDomain  | Array/String | You want to add completion list
 
 ## Any action?
