@@ -52,6 +52,10 @@ var EmailDomainSuggest = EmailDomainSuggest || (function() {
   function init(el, options) {
     if (options !== undefined) {
       DOMAIN_LIST_ID = (options.datalistId != null) ? options.datalistId : DOMAIN_LIST_ID;
+      if (options.addDomain !== undefined) {
+        if (getType(options.addDomain) === 'String') Array.prototype.push.call(DOMAIN_LIST, options.addDomain);
+        else if (getType(options.addDomain) === 'Array') Array.prototype.push.apply(DOMAIN_LIST, options.addDomain);
+      }
     }
     el.setAttribute('list', DOMAIN_LIST_ID);
     $el = el;
@@ -59,6 +63,17 @@ var EmailDomainSuggest = EmailDomainSuggest || (function() {
     $datalist.id = DOMAIN_LIST_ID;
 
     lastEventData = null;
+
+    /**
+     * get type
+     *
+     * @method private
+     * @param {Any} obj
+     * @return {String} type
+     */
+    function getType(obj) {
+      return Object.prototype.toString.call(obj).slice(8, -1);
+    }
 
     /**
      * email domain autocomplete
@@ -121,16 +136,45 @@ var EmailDomainSuggest = EmailDomainSuggest || (function() {
       $option = null;
     }
 
+    /**
+     * string full-size to half-size
+     *
+     * @method private
+     * @param {String} s input string
+     * @return {String} half-size string
+     */
+    function toHalfSize(s) {
+      return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    }
+
     return {
       /**
        * suggest run
        *
-       * @method public instance method
+       * @method public instance
        */
       execute: function() {
+        var fullSizeRegex = /[Ａ-Ｚａ-ｚ０-９]/g;
+        var vowelRegex1 = /あ/;
+        var vowelRegex2 = /い/;
+        var vowelRegex3 = /う/;
+        var vowelRegex4 = /え/;
+        var vowelRegex5 = /お/;
+        var vowelRegex6 = /＠/;
+        var vowelRegex7 = /ー/;
+        var vowelRegex8 = /＿/;
         $el.addEventListener('input', function(evt) {
+          var val = evt.target.value;
+          $el.value = val.replace(fullSizeRegex, toHalfSize);
+          if (val.match(vowelRegex1)) $el.value = val.replace(vowelRegex1, 'a');
+          if (val.match(vowelRegex2)) $el.value = val.replace(vowelRegex2, 'i');
+          if (val.match(vowelRegex3)) $el.value = val.replace(vowelRegex3, 'u');
+          if (val.match(vowelRegex4)) $el.value = val.replace(vowelRegex4, 'e');
+          if (val.match(vowelRegex5)) $el.value = val.replace(vowelRegex5, 'o');
+          if (val.match(vowelRegex6)) $el.value = val.replace(vowelRegex6, '@');
+          if (val.match(vowelRegex7)) $el.value = val.replace(vowelRegex7, '-');
+          if (val.match(vowelRegex8)) $el.value = val.replace(vowelRegex8, '_');
           if (!evt.target.value.match(/@/)) return deleteDataList();
-          //if (evt.target.value.length < 1) deleteDataList();
           lastEventData = evt;
           IS_ATMARK_PRESS = true;
           suggest();
@@ -148,6 +192,7 @@ var EmailDomainSuggest = EmailDomainSuggest || (function() {
      * @param {HTMLElement} $el input form
      * @param {Object} options
      * @param {String} options.datalistId datalist tag id replace
+     * @param {Array or String} options.addDomain add DOMAIN_LIST
      * @return singleton instance
      */
     getInstance: function($el, options) {
