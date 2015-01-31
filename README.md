@@ -4,7 +4,7 @@ email domain autocomplete
 ## How to install
 
 ```sh
-bower install --save EventDomainSuggest
+bower install --save email-domain-suggest
 ```
 
 ## Usage
