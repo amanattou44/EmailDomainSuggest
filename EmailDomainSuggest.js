@@ -9,24 +9,18 @@ var EmailDomainSuggest = EmailDomainSuggest || (function() {
   var DOMAIN_LIST_ID = 'domain_list';
   // email domain list
   var DOMAIN_LIST = [
-    'yahoo.com',
+    // PC
     'gmail.com',
-    'google.com',
-    'hotmail.com',
-    'me.com',
-    'aol.com',
-    'mac.com',
-    'live.com',
-    'comcast.com',
-    'googlemail.com',
-    'msn.com',
-    'hotmail.co.uk',
-    'yahoo.co.uk',
-    'facebook.com',
-    'verizon.net',
-    'att.net',
-    'gmz.com',
-    'mail.com'
+    'yahoo.co.jp',
+    // Mobile
+    'docomo.ne.jp',
+    'ezweb.ne.jp',
+    'softbank.ne.jp',
+    'i.softbank.jp',
+    'willcom.com',
+    'emobile.ne.jp',
+    'yahoo.ne.jp',
+    'ymobile.ne.jp'
   ];
   // input @-mark = true
   var IS_ATMARK_PRESS = false;
