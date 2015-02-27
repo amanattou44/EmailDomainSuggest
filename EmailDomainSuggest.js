@@ -31,6 +31,7 @@ var EmailDomainSuggest = EmailDomainSuggest || (function() {
     'ezweb.ne.jp',
     'softbank.ne.jp',
     'i.softbank.jp',
+    'i.softbank.ne.jp',
     'willcom.com',
     'emobile.ne.jp',
     'yahoo.ne.jp',
