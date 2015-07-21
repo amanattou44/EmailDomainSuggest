@@ -35,3 +35,5 @@ Default browser
 
 In other words create a datalist tag of HTML5.
 
+## LICENSE
+MIT
