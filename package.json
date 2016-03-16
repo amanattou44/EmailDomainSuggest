@@ -1,0 +1,24 @@
+{
+  "name": "email-domain-suggest",
+  "version": "1.0.4",
+  "description": "email domain suggest",
+  "main": "EmailDomainSuggest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lion-man44/EmailDomainSuggest.git"
+  },
+  "keywords": [
+    "email",
+    "domain",
+    "suggest"
+  ],
+  "author": "lion-man44",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lion-man44/EmailDomainSuggest/issues"
+  },
+  "homepage": "https://github.com/lion-man44/EmailDomainSuggest#readme"
+}
