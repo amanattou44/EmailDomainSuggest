@@ -7,6 +7,11 @@ email domain autocomplete
 bower install --save email-domain-suggest
 ```
 
+```sh
+npm install --save email-domain-suggest browserify
+# Use browserify. Please compiled with browserify
+```
+
 ## Usage
 
 ```js
